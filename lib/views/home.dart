@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:note_app/res/assets.dart';
+import 'package:note_app/views/create_note.dart';
 import 'package:note_app/views/widgets/empty_screen_widget.dart';
 
 import '../res/strings.dart';
@@ -13,8 +14,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
-
   // toggle Icon
   bool isListView = true;
 
@@ -23,8 +22,12 @@ class _HomeViewState extends State<HomeView> {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: (){},
-
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CreateNoteView(),));
+          },
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          child: const Icon(Icons.add),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -43,13 +46,14 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                     IconButton(
-                    onPressed:() {
-                      setState(() {
-                        isListView = !isListView;
-                      });
-                    } ,
-                    icon: Icon(isListView ? Icons.splitscreen_sharp : Icons.grid_view)),
-
+                        onPressed: () {
+                          setState(() {
+                            isListView = !isListView;
+                          });
+                        },
+                        icon: Icon(isListView
+                            ? Icons.splitscreen_sharp
+                            : Icons.grid_view)),
                   ],
                 ),
               ),
