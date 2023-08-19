@@ -18,9 +18,11 @@ class _CreateNoteViewState extends State<CreateNoteView> {
   void dispose() {
     super.dispose();
 
-    //printing values on console to check textfield work.
-    log(_titleController.text);
-    log(_descriptionController.text);
+    /// printing values on console to check textfield work.
+    // log(_titleController.text);
+    // log(_descriptionController.text);
+
+
     _titleController.dispose();
     _descriptionController.dispose();
   }

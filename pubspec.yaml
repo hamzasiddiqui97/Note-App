@@ -21,6 +21,9 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.1 <4.0.0'
 
+
+isar_version: &isar_version 3.0.5
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -37,7 +40,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   lottie: ^2.6.0
 
+  isar: *isar_version
+  isar_flutter_libs: *isar_version
+
 dev_dependencies:
+
+
   flutter_test:
     sdk: flutter
 
@@ -47,6 +55,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+  isar_generator: *isar_version
+  build_runner:
 
 
 # For information on the generic Dart part of this file, see the
